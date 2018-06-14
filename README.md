@@ -6,12 +6,11 @@ It creates a sample app with an initial stack navigation where you login using a
 
 It use the next libraries:
 
-react-navigation 2
-redux
-redux-thunk + fetch
-native-base
-estlint and prettier 
-
+* react-navigation 2
+* redux
+* redux-thunk + fetch
+* native-base
+* estlint and prettier 
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
