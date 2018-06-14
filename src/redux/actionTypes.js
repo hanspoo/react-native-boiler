@@ -1,0 +1,5 @@
+const LOGGED_IN = "LOGGED_IN";
+const LOGIN_ERROR = "LOGIN_ERROR";
+const LOGOUT = "LOGOUT";
+
+export { LOGGED_IN, LOGIN_ERROR, LOGOUT };
