@@ -145,7 +145,7 @@ class LoginScreen extends Component {
           style={{ color: "blue", marginBottom: 10 }}
           onPress={() => Linking.openURL("http://www.xxxxxxxx.cl")}
         >
-          ¿ Your forgot your password ?
+          ¿ Forgot your password ?
         </Text>
         <Button
           onPress={this._onSubmit}
