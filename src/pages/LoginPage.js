@@ -46,16 +46,14 @@ class LoginScreen extends Component {
   };
 
   constructor(props) {
-    console.log("constructor");
     super(props);
     this.state = {
       buttonState: true,
-      value: { email: "xxxxx@gmail.com", password: "123456" }
+      value: { email: "hans@welinux.cl", password: "123456" }
     };
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("will receive props");
     const { error } = nextProps.LoginReducer;
     if (error) {
       Toast.show({
@@ -72,7 +70,6 @@ class LoginScreen extends Component {
   }
 
   onChange = () => {
-    console.log("onchange");
     const value = this.loginForm.getValue();
     if (value) {
       this.setState({
@@ -83,7 +80,6 @@ class LoginScreen extends Component {
   };
 
   _onSubmit = () => {
-    console.log("onsubmit");
     const value = this.loginForm.getValue();
     if (value) {
       const { email, password } = value;
@@ -98,7 +94,6 @@ class LoginScreen extends Component {
         });
       }
       // if validation fails, value will be null
-      console.log(value);
       // value here is an instance of LoginFields
     } else {
       Toast.show({
@@ -115,8 +110,6 @@ class LoginScreen extends Component {
   };
 
   render() {
-    console.log("render", this.props.LoginReducer);
-
     return (
       <BorderPage
         style={{
@@ -143,7 +136,7 @@ class LoginScreen extends Component {
         />
         <Text
           style={{ color: "blue", marginBottom: 10 }}
-          onPress={() => Linking.openURL("http://www.xxxxxxxx.cl")}
+          onPress={() => Linking.openURL("http://www.welinux.cl")}
         >
           ¿ Forgot your password ?
         </Text>

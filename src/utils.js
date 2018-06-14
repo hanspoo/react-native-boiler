@@ -13,7 +13,6 @@ const doFormBody = details => {
 };
 
 const toast = (message, duration = 2500) => {
-  console.log("Enviando mensaje", message);
   Toast.show({
     text: message,
     duration,

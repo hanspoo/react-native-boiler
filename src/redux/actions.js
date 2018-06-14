@@ -6,13 +6,11 @@ const logout = () => {
   return { type: LOGOUT };
 };
 
-const doLogin = ({ email, password }) => {
+const doLoginUrlEncoded = ({ email, password }) => {
   const body = doFormBody({ email, password });
-  console.log("Entrando a doLogin ", body, `${config.endPoint}/rest/login`);
 
   return dispatch => {
     const url = `${config.endPoint}/rest/login`;
-    console.log(`url es ${url}`);
     fetch(url, {
       headers: {
         Accept: "application/json",
@@ -27,10 +25,30 @@ const doLogin = ({ email, password }) => {
         else dispatch({ type: LOGGED_IN, payload: json });
       })
       .catch(err => {
-        // // console.log("error en conexión de red", err.message);
         dispatch({ type: LOGIN_ERROR, payload: err.message });
       });
   };
 };
 
-export { doLogin, logout };
+const doLogin = ({ email, password }) => {
+  const body = JSON.stringify({ email, password });
+
+  return dispatch => {
+    const url = `${config.endPoint}/api/login`;
+    console.log(`conectando a ${url} con body ${body}`);
+    fetch(url, {
+      method: "POST",
+      body
+    })
+      .then(response => response.json())
+      .then(json => {
+        if (json.error) dispatch({ type: LOGIN_ERROR, payload: json.error });
+        else dispatch({ type: LOGGED_IN, payload: json });
+      })
+      .catch(err => {
+        dispatch({ type: LOGIN_ERROR, payload: err.message });
+      });
+  };
+};
+
+export { doLogin, logout, doLoginUrlEncoded };

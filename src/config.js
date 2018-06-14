@@ -3,7 +3,7 @@
 // https://serverless-stack.com/chapters/manage-environments-in-create-react-app.html
 
 const dev = {
-  endPoint: "http://192.168.1.106:9000"
+  endPoint: "https://reqres.in/api/login"
 };
 
 const casa = {
