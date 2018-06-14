@@ -1,7 +1,9 @@
 import React from "react";
 import { ActivityIndicator } from "react-native";
+import { Provider } from "react-redux";
 import Expo from "expo";
 import AuthNavigator from "./src/navs/AuthNavigator";
+import store from "./src/redux/store";
 
 export default class App extends React.Component {
   state = { loading: true };
@@ -18,7 +20,11 @@ export default class App extends React.Component {
     if (loading)
       return <ActivityIndicator size="large" style={styles.centrado} />;
 
-    return <AuthNavigator />;
+    return (
+      <Provider store={store}>
+        <AuthNavigator />
+      </Provider>
+    );
   }
 }
 

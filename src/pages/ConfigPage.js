@@ -1,9 +1,12 @@
 import React from "react";
 import { View, StyleSheet, Button } from "react-native";
 import { NavigationActions } from "react-navigation";
+import { connect } from "react-redux";
+import { logout } from "../redux/actions.js";
 
-export default class ConfigPage extends React.Component {
+class ConfigPage extends React.Component {
   logout = () => {
+    this.props.logout();
     this.props.navigation.dispatch({
       type: NavigationActions.NAVIGATE,
       routeName: "LoginPage",
@@ -16,8 +19,6 @@ export default class ConfigPage extends React.Component {
   };
 
   render() {
-    const { navigation: { navigate } } = this.props;
-
     return (
       <View style={styles.container}>
         <Button title="Logout" onPress={this.logout} />
@@ -33,3 +34,5 @@ const styles = StyleSheet.create({
     justifyContent: "center"
   }
 });
+
+export default connect(null, { logout })(ConfigPage);
