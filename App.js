@@ -1,23 +1,31 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { ActivityIndicator } from "react-native";
+import Expo from "expo";
+import AuthNavigator from "./src/navs/AuthNavigator";
 
 export default class App extends React.Component {
+  state = { loading: true };
+  async componentWillMount() {
+    await Expo.Font.loadAsync({
+      Roboto: require("native-base/Fonts/Roboto.ttf"),
+      Roboto_medium: require("native-base/Fonts/Roboto_medium.ttf")
+    });
+    this.setState({ loading: false });
+  }
+
   render() {
-    return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
-    );
+    const { loading } = this.state;
+    if (loading)
+      return <ActivityIndicator size="large" style={styles.centrado} />;
+
+    return <AuthNavigator />;
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
+const styles = {
+  centrado: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    justifyContent: "center",
+    alignItems: "center"
+  }
+};
