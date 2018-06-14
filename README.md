@@ -2,7 +2,7 @@ Welinux Custom Boilerplate
 
 This is our shot on react native projects.
 
-It creates a sample app with an initial stack navigation where you login using a rest service, on successful login you get into a tab navigator with two tabs, each one with a Stack Navigator, you can logout and get into login.
+It creates a sample app with an initial stack navigation. You are welcome with a login page with email and password with a form created with tcomb, on login button pressed it uses a rest service with fetch, redux and redux-thunk, on successful login you navigate to a tab navigator with two tabs, each one with a Stack Navigator, you can logout and return to login again.
 
 It use the next libraries:
 
