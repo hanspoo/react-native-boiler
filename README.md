@@ -2,10 +2,10 @@
 
 This is our selection for react native projects, all packages are latest version to Jun 2018.
 
-git clone https://github.com/hanspoo/react-native-boiler
-cd react-native-boiler/
-yarn install
-yarn start
+git clone https://github.com/hanspoo/react-native-boiler  
+cd react-native-boiler/  
+yarn install  
+yarn start  
 
 An app with login page, REST login and home page with tabs.
 
