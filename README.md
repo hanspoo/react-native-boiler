@@ -2,6 +2,11 @@
 
 This is our selection for react native projects, all packages are latest version to Jun 2018.
 
+git clone https://github.com/hanspoo/react-native-boiler
+cd react-native-boiler/
+yarn install
+yarn start
+
 An app with login page, REST login and home page with tabs.
 
 It creates a sample app with an initial stack navigation, on landing yout get into a login page where you should complete the email and password; the form is created with tcomb which is much simpler than redux-form and uses local state. 
